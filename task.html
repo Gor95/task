@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+<style>
+.window{
+    text-align: center;
+    visibility: hidden;
+    background-color: gray;
+    width: 600px;
+    height: 200px;
+    margin: auto;
+
+}
+</style>
+
+</head>
+<body>
+<button onclick="show_num()"> generate</button>
+
+
+<div class="window">
+    <h1>
+        Tvery verjacel en
+    </h1>
+    <button onclick="location.reload()">
+        Retry
+    </button>
+     <button onclick="document.getElementsByClassName('window')[0].style.visibility='hidden'">
+        Cancel
+    </button>
+
+</div>
+<script>
+    var arr = [1,2,3,4,5,6,7,8,9,10];
+    var arr_1 = [];
+    function show_num(){
+    var gen_num=arr[Math.floor(Math.random() * arr.length)];
+
+        if (arr_1.length == arr.length){
+            document.getElementsByClassName('window')[0].style.visibility='visible'
+            return;
+        }
+    if(arr_1.includes(gen_num)){
+    show_num();
+    }
+    else {
+        alert(gen_num)
+     arr_1.push(gen_num);
+    }
+    }
+</script>
+</body>
+</html>
